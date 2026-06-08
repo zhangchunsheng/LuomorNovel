@@ -1,0 +1,63 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"var:preset|spacing|xl","bottom":"var:preset|spacing|xl"}}},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group" style="margin-top:var(--wp--preset--spacing--xl);margin-bottom:var(--wp--preset--spacing--xl)">
+
+<!-- wp:heading {"level":1} -->
+<h1 class="wp-block-heading"><?php esc_html_e( '搜索结果', 'luomor-novel' ); ?></h1>
+<!-- /wp:heading -->
+
+<!-- wp:search {"label":"","placeholder":"<?php esc_attr_e( '搜索小说...', 'luomor-novel' ); ?>","buttonText":"<?php esc_attr_e( '搜索', 'luomor-novel' ); ?>","buttonPosition":"button-inside","width":75,"widthUnit":"%"} /-->
+
+<!-- wp:heading {"level":2,"fontSize":"large"} -->
+<h2 class="wp-block-heading"><?php esc_html_e( '小说', 'luomor-novel' ); ?></h2>
+<!-- /wp:heading -->
+
+<!-- wp:query {"query":{"perPage":6,"pages":0,"offset":0,"postType":"novel","order":"desc","orderBy":"date","inherit":false}} -->
+<div class="wp-block-query">
+<!-- wp:post-template {"layout":{"type":"grid","columnCount":3}} -->
+
+<!-- wp:group {"className":"luomor-novel-card","layout":{"type":"default"}} -->
+<div class="wp-block-group luomor-novel-card">
+<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"2/3","sizeSlug":"novel-cover-thumb","style":{"border":{"radius":"8px"}}} /-->
+<!-- wp:post-title {"level":3,"isLink":true,"fontSize":"medium"} /-->
+<!-- wp:post-terms {"term":"novel_genre","className":"luomor-genre-tags","fontSize":"small"} /-->
+<!-- wp:post-excerpt {"moreText":"","excerptLength":30,"fontSize":"small"} /-->
+</div>
+<!-- /wp:group -->
+
+<!-- /wp:post-template -->
+
+<!-- wp:query-no-results -->
+<!-- wp:paragraph -->
+<p><?php esc_html_e( '未找到相关小说', 'luomor-novel' ); ?></p>
+<!-- /wp:paragraph -->
+<!-- /wp:query-no-results -->
+</div>
+<!-- /wp:query -->
+
+<!-- wp:heading {"level":2,"fontSize":"large"} -->
+<h2 class="wp-block-heading"><?php esc_html_e( '章节', 'luomor-novel' ); ?></h2>
+<!-- /wp:heading -->
+
+<!-- wp:query {"query":{"perPage":10,"pages":0,"offset":0,"postType":"chapter","order":"desc","orderBy":"date","inherit":false}} -->
+<div class="wp-block-query">
+<!-- wp:post-template -->
+
+<!-- wp:group {"className":"luomor-chapter-result","layout":{"type":"flex","flexDirection":"column"}} -->
+<div class="wp-block-group luomor-chapter-result">
+<!-- wp:post-title {"level":3,"isLink":true,"fontSize":"medium"} /-->
+<!-- wp:paragraph {"fontSize":"small"} -->
+<p><?php esc_html_e( '出自：', 'luomor-novel' ); ?> <!-- wp:post-terms {"term":"category","isLink":true} /--></p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
+
+<!-- /wp:post-template -->
+</div>
+<!-- /wp:query -->
+
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

@@ -1,0 +1,43 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"var:preset|spacing|4xl","bottom":"var:preset|spacing|4xl"}}},"layout":{"type":"constrained","justifyContent":"center"}} -->
+<main class="wp-block-group" style="margin-top:var(--wp--preset--spacing--4xl);margin-bottom:var(--wp--preset--spacing--4xl)">
+
+<!-- wp:heading {"textAlign":"center","level":1,"fontSize":"huge"} -->
+<h1 class="wp-block-heading has-text-align-center"><?php esc_html_e( '页面未找到', 'luomor-novel' ); ?></h1>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center","fontSize":"large"} -->
+<p class="has-text-align-center"><?php esc_html_e( '抱歉，您访问的页面不存在。', 'luomor-novel' ); ?></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:spacer {"height":"1rem"} /-->
+
+<!-- wp:group {"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-group">
+<!-- wp:buttons -->
+<div class="wp-block-buttons">
+<!-- wp:button -->
+<div class="wp-block-button">
+<a class="wp-block-button__link wp-element-button" href="/"><?php esc_html_e( '返回首页', 'luomor-novel' ); ?></a>
+</div>
+<!-- /wp:button -->
+
+<!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline">
+<a class="wp-block-button__link wp-element-button" href="/novel/"><?php esc_html_e( '浏览小说', 'luomor-novel' ); ?></a>
+</div>
+<!-- /wp:button -->
+</div>
+<!-- /wp:buttons -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:spacer {"height":"2rem"} /-->
+
+<!-- wp:search {"label":"","placeholder":"<?php esc_attr_e( '搜索小说...', 'luomor-novel' ); ?>","buttonText":"<?php esc_attr_e( '搜索', 'luomor-novel' ); ?>","buttonPosition":"button-inside","width":50,"widthUnit":"%"} /-->
+
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

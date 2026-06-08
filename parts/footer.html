@@ -1,0 +1,31 @@
+<!-- wp:group {"tagName":"footer","className":"site-footer","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|lg","bottom":"var:preset|spacing|lg"}},"border":{"top":{"color":"var:preset|color|muted","width":"1px"}}}} -->
+<footer class="wp-block-group site-footer" style="padding-top:var(--wp--preset--spacing--lg);padding-bottom:var(--wp--preset--spacing--lg);border-top-color:var(--wp--preset--color--muted);border-top-width:1px">
+
+<!-- wp:group {"align":"wide","layout":{"type":"flex","justifyContent":"space-between","flexWrap":"wrap"}} -->
+<div class="wp-block-group alignwide">
+
+<!-- wp:group {"layout":{"type":"flex","flexDirection":"column"}} -->
+<div class="wp-block-group">
+
+<!-- wp:site-title {"level":0,"isLink":true,"fontSize":"medium"} /-->
+
+<!-- wp:paragraph {"fontSize":"small"} -->
+<p>&copy; <?php echo esc_html( date_i18n( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?>. <?php esc_html_e( '保留所有权利。', 'luomor-novel' ); ?></p>
+<!-- /wp:paragraph -->
+
+</div>
+<!-- /wp:group -->
+
+<!-- wp:navigation {"ref":"","overlayMenu":"never","layout":{"type":"flex","justifyContent":"right"},"fontSize":"small"} /-->
+
+</div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph {"align":"center","fontSize":"small","className":"luomor-footer-powered"} -->
+<p class="has-text-align-center luomor-footer-powered">
+<?php esc_html_e( '由 LuomorNovel 主题驱动', 'luomor-novel' ); ?>
+</p>
+<!-- /wp:paragraph -->
+
+</footer>
+<!-- /wp:group -->

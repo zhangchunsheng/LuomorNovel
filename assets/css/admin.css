@@ -1,0 +1,148 @@
+/**
+ * LuomorNovel 管理后台样式
+ *
+ * @package LuomorNovel
+ */
+
+/* ============================================================
+   AI 写作元框
+   ============================================================ */
+
+#luomor-ai-writer .luomor-ai-controls {
+	padding: 10px 0;
+}
+
+#luomor-ai-writer .luomor-ai-field {
+	margin-bottom: 12px;
+}
+
+#luomor-ai-writer .luomor-ai-field label {
+	display: block;
+	font-weight: 600;
+	margin-bottom: 4px;
+	font-size: 13px;
+}
+
+#luomor-ai-writer #luomor-ai-prompt {
+	min-height: 80px;
+	resize: vertical;
+}
+
+#luomor-ai-writer #luomor-ai-generate-btn {
+	width: 100%;
+}
+
+#luomor-ai-writer #luomor-ai-result textarea {
+	min-height: 150px;
+	resize: vertical;
+	font-family: Georgia, serif;
+	line-height: 1.6;
+}
+
+#luomor-ai-writer #luomor-ai-error {
+	padding: 8px 12px;
+	background: #fef2f2;
+	border: 1px solid #fecaca;
+	border-radius: 4px;
+}
+
+/* ============================================================
+   章节排序面板
+   ============================================================ */
+
+#luomor-chapter-sort-panel .inside {
+	padding: 10px 0;
+}
+
+#luomor-chapter-sort-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.luomor-chapter-sort-item {
+	display: flex;
+	align-items: center;
+	padding: 10px 12px;
+	margin: 4px 0;
+	background: #f9f9f9;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	cursor: grab;
+	user-select: none;
+	transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.luomor-chapter-sort-item:active {
+	cursor: grabbing;
+}
+
+.luomor-chapter-sort-item:hover {
+	background: #f0f0f1;
+	border-color: #c3c4c7;
+}
+
+.luomor-chapter-sort-item.dragging {
+	opacity: 0.5;
+	background: #e0f2fe;
+	border-color: #0ea5e9;
+}
+
+.luomor-chapter-sort-item .drag-handle {
+	color: #999;
+	margin-right: 10px;
+	font-size: 16px;
+	cursor: grab;
+}
+
+.luomor-chapter-sort-item .chapter-title {
+	font-size: 14px;
+	flex: 1;
+}
+
+#luomor-sort-message {
+	font-size: 13px;
+	padding: 6px 10px;
+	border-radius: 4px;
+}
+
+/* ============================================================
+   小说列表页面
+   ============================================================ */
+
+.column-chapter_count,
+.column-word_count {
+	text-align: center;
+}
+
+.column-chapter_count {
+	width: 80px;
+}
+
+.column-word_count {
+	width: 100px;
+}
+
+/* ============================================================
+   设置页面
+   ============================================================ */
+
+.toplevel_page_luomor-novel-settings .form-table th {
+	width: 200px;
+}
+
+.toplevel_page_luomor-novel-settings .description {
+	font-style: normal;
+	color: #666;
+}
+
+#luomor-ai-test-result {
+	padding: 15px;
+	margin: 15px 0;
+	border-radius: 4px;
+	border: 1px solid #ddd;
+}
+
+#luomor-ai-test-result p {
+	margin: 0;
+}

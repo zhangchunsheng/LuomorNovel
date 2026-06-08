@@ -1,0 +1,75 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","className":"luomor-chapter-reader","style":{"spacing":{"margin":{"top":"var:preset|spacing|lg","bottom":"var:preset|spacing|xl"}}},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group luomor-chapter-reader" style="margin-top:var(--wp--preset--spacing--lg);margin-bottom:var(--wp--preset--spacing--xl)">
+
+<!-- wp:group {"className":"luomor-chapter-header","layout":{"type":"flex","justifyContent":"space-between","flexWrap":"wrap"}} -->
+<div class="wp-block-group luomor-chapter-header">
+
+<!-- wp:group {"layout":{"type":"flex","flexDirection":"column"}} -->
+<div class="wp-block-group">
+
+<!-- wp:paragraph {"className":"luomor-chapter-novel-link"} -->
+<p class="luomor-chapter-novel-link">
+<a href="#" class="luomor-novel-back-link">
+&larr; <?php esc_html_e( '返回小说', 'luomor-novel' ); ?>
+</a>
+</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:post-title {"level":1,"fontSize":"huge"} /-->
+
+</div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"luomor-reading-tools","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group luomor-reading-tools">
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons">
+<!-- wp:button {"className":"is-style-outline","fontSize":"small"} -->
+<div class="wp-block-button is-style-outline luomor-font-size-btn">
+<button class="wp-block-button__link wp-element-button" aria-label="<?php esc_attr_e( '调整字号', 'luomor-novel' ); ?>">
+A+
+</button>
+</div>
+<!-- /wp:button -->
+
+<!-- wp:button {"className":"is-style-outline","fontSize":"small"} -->
+<div class="wp-block-button is-style-outline luomor-dark-mode-btn">
+<button class="wp-block-button__link wp-element-button" aria-label="<?php esc_attr_e( '切换暗色模式', 'luomor-novel' ); ?>">
+&#9790;
+</button>
+</div>
+<!-- /wp:button -->
+</div>
+<!-- /wp:buttons -->
+
+</div>
+<!-- /wp:group -->
+
+</div>
+<!-- /wp:group -->
+
+<!-- wp:separator {"className":"is-style-wide"} /-->
+
+<!-- wp:progress-bar /-->
+
+<!-- wp:post-content {"className":"luomor-chapter-content","fontSize":"large"} /-->
+
+<!-- wp:separator {"className":"is-style-wide"} /-->
+
+<!-- wp:template-part {"slug":"chapter-nav"} /-->
+
+<!-- wp:spacer {"height":"2rem"} /-->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading"><?php esc_html_e( '评论', 'luomor-novel' ); ?></h3>
+<!-- /wp:heading -->
+
+<!-- wp:post-comments /-->
+
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

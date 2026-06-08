@@ -1,0 +1,246 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": true,
+		"color": {
+			"defaultPalette": false,
+			"defaultGradients": false,
+			"palette": [
+				{
+					"slug": "paper",
+					"color": "#faf8f5",
+					"name": "Paper"
+				},
+				{
+					"slug": "ink",
+					"color": "#2d2d2d",
+					"name": "Ink"
+				},
+				{
+					"slug": "primary",
+					"color": "#8b5cf6",
+					"name": "Primary"
+				},
+				{
+					"slug": "accent",
+					"color": "#f59e0b",
+					"name": "Accent"
+				},
+				{
+					"slug": "muted",
+					"color": "#f0ece6",
+					"name": "Muted"
+				},
+				{
+					"slug": "surface",
+					"color": "#ffffff",
+					"name": "Surface"
+				}
+			],
+			"dark": {
+				"defaultPalette": false,
+				"palette": [
+					{
+						"slug": "paper",
+						"color": "#1a1a2e",
+						"name": "Paper Dark"
+					},
+					{
+						"slug": "ink",
+						"color": "#e0e0e0",
+						"name": "Ink Dark"
+					},
+					{
+						"slug": "primary",
+						"color": "#a78bfa",
+						"name": "Primary Dark"
+					},
+					{
+						"slug": "accent",
+						"color": "#fbbf24",
+						"name": "Accent Dark"
+					},
+					{
+						"slug": "muted",
+						"color": "#16213e",
+						"name": "Muted Dark"
+					},
+					{
+						"slug": "surface",
+						"color": "#0f3460",
+						"name": "Surface Dark"
+					}
+				]
+			}
+		},
+		"typography": {
+			"fontFamilies": [
+				{
+					"name": "Reading Serif",
+					"slug": "reading-serif",
+					"fontFamily": "Georgia, 'Noto Serif SC', 'Source Han Serif CN', 'Songti SC', serif"
+				},
+				{
+					"name": "UI Sans",
+					"slug": "ui-sans",
+					"fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif"
+				},
+				{
+					"name": "Mono",
+					"slug": "mono",
+					"fontFamily": "'JetBrains Mono', 'Fira Code', monospace"
+				}
+			],
+			"fontSizes": [
+				{
+					"name": "Small",
+					"slug": "small",
+					"size": "0.875rem"
+				},
+				{
+					"name": "Normal",
+					"slug": "normal",
+					"size": "1rem"
+				},
+				{
+					"name": "Medium",
+					"slug": "medium",
+					"size": "1.125rem"
+				},
+				{
+					"name": "Large",
+					"slug": "large",
+					"size": "1.25rem",
+					"fluid": {
+						"min": "1.125rem",
+						"max": "1.25rem"
+					}
+				},
+				{
+					"name": "Extra Large",
+					"slug": "x-large",
+					"size": "1.5rem",
+					"fluid": {
+						"min": "1.375rem",
+						"max": "1.5rem"
+					}
+				},
+				{
+					"name": "Huge",
+					"slug": "huge",
+					"size": "2.5rem",
+					"fluid": {
+						"min": "2rem",
+						"max": "2.5rem"
+					}
+				}
+			]
+		},
+		"spacing": {
+			"spacingSizes": [
+				{ "name": "XS", "slug": "xs", "size": "0.5rem" },
+				{ "name": "SM", "slug": "sm", "size": "1rem" },
+				{ "name": "MD", "slug": "md", "size": "1.5rem" },
+				{ "name": "LG", "slug": "lg", "size": "2rem" },
+				{ "name": "XL", "slug": "xl", "size": "3rem" },
+				{ "name": "2XL", "slug": "2xl", "size": "4rem" }
+			]
+		},
+		"layout": {
+			"contentSize": "720px",
+			"wideSize": "1200px"
+		},
+		"useRootPaddingAwareAlignments": true,
+		"custom": {
+			"reading": {
+				"lineHeight": "1.8",
+				"paragraphSpacing": "1.5em"
+			}
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "var(--wp--preset--color--paper)",
+			"text": "var(--wp--preset--color--ink)"
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--ui-sans)",
+			"fontSize": "var(--wp--preset--font-size--normal)",
+			"lineHeight": "1.6"
+		},
+		"spacing": {
+			"blockGap": "1.5rem",
+			"padding": {
+				"top": "0",
+				"right": "1.5rem",
+				"bottom": "0",
+				"left": "1.5rem"
+			}
+		},
+		"blocks": {
+			"core/heading": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--ui-sans)",
+					"fontWeight": "600"
+				}
+			},
+			"core/post-content": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--reading-serif)",
+					"fontSize": "var(--wp--preset--font-size--large)",
+					"lineHeight": "var(--custom--reading--line-height)"
+				}
+			},
+			"core/paragraph": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--reading-serif)",
+					"fontSize": "var(--wp--preset--font-size--large)",
+					"lineHeight": "var(--custom--reading--line-height)"
+				}
+			},
+			"core/navigation": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--normal)"
+				}
+			}
+		},
+		"elements": {
+			"link": {
+				"color": {
+					"text": "var(--wp--preset--color--primary)"
+				},
+				"typography": {
+					"textDecoration": "none"
+				},
+				":hover": {
+					"typography": {
+						"textDecoration": "underline"
+					}
+				}
+			}
+		}
+	},
+	"templateParts": [
+		{
+			"area": "header",
+			"name": "header",
+			"title": "Header"
+		},
+		{
+			"area": "footer",
+			"name": "footer",
+			"title": "Footer"
+		},
+		{
+			"area": "uncategorized",
+			"name": "chapter-nav",
+			"title": "Chapter Navigation"
+		},
+		{
+			"area": "uncategorized",
+			"name": "novel-card",
+			"title": "Novel Card"
+		}
+	]
+}
