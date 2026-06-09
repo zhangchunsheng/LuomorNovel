@@ -39,7 +39,7 @@ class Luomor_AI_OpenAI implements Luomor_AI_Provider_Interface {
 	public function generate( array $args ): array {
 		$api_key = get_option( 'luomor_ai_openai_key', '' );
 		$model   = get_option( 'luomor_ai_openai_model', 'gpt-4o' );
-		$base_url = rtrim( get_option( 'luomor_ai_openai_base_url', 'https://api.openai.com/v1/chat/completions' ), '/' );
+		$base_url = rtrim( get_option( 'luomor_ai_openai_base_url', 'https://api.openai.com/v1' ), '/' );
 		$max_tokens = (int) get_option( 'luomor_ai_max_tokens', 4000 );
 		$temperature = (float) get_option( 'luomor_ai_temperature', 0.7 );
 
@@ -62,6 +62,19 @@ class Luomor_AI_OpenAI implements Luomor_AI_Provider_Interface {
 			$messages = array_merge( $args['messages'], $messages );
 		}
 
+		$data = array(
+			'timeout' => 30,
+			'headers' => array(
+				'Content-Type'  => 'application/json',
+				'Authorization' => 'Bearer ' . $api_key,
+			),
+			'body' => wp_json_encode( array(
+				'model'       => $model,
+				'messages'    => $messages,
+				'max_tokens'  => $max_tokens,
+				'temperature' => $temperature,
+			) ),
+		);
 		$response = wp_remote_post( $base_url . "/chat/completions", $data );
 
 		if ( is_wp_error( $response ) ) {
@@ -114,7 +127,7 @@ class Luomor_AI_Claude implements Luomor_AI_Provider_Interface {
 	public function generate( array $args ): array {
 		$api_key = get_option( 'luomor_ai_claude_key', '' );
 		$model   = get_option( 'luomor_ai_claude_model', 'claude-sonnet-4-20250514' );
-		$base_url = rtrim( get_option( 'luomor_ai_claude_base_url', 'https://api.anthropic.com/v1/messages' ), '/' );
+		$base_url = rtrim( get_option( 'luomor_ai_claude_base_url', 'https://api.anthropic.com' ), '/' );
 		$max_tokens = (int) get_option( 'luomor_ai_max_tokens', 4000 );
 		$temperature = (float) get_option( 'luomor_ai_temperature', 0.7 );
 
@@ -148,7 +161,7 @@ class Luomor_AI_Claude implements Luomor_AI_Provider_Interface {
 			$body['system'] = $args['system_prompt'];
 		}
 
-		$response = wp_remote_post( $base_url . "/messages", array(
+		$response = wp_remote_post( $base_url . "/v1/messages", array(
 			'timeout' => 30,
 			'headers' => array(
 				'Content-Type'      => 'application/json',
