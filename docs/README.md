@@ -24,4 +24,6 @@ claude
 
 sudo apt install bubblewrap
 npm install -g @openai/codex
+
+页面显示错误：display_name ); ?>，未替换内容
 ```

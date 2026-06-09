@@ -4,13 +4,13 @@
 <main class="wp-block-group" style="margin-top:var(--wp--preset--spacing--xl);margin-bottom:var(--wp--preset--spacing--xl)">
 
 <!-- wp:heading {"level":1} -->
-<h1 class="wp-block-heading"><?php esc_html_e( '搜索结果', 'luomor-novel' ); ?></h1>
+<h1 class="wp-block-heading">搜索结果</h1>
 <!-- /wp:heading -->
 
-<!-- wp:search {"label":"","placeholder":"<?php esc_attr_e( '搜索小说...', 'luomor-novel' ); ?>","buttonText":"<?php esc_attr_e( '搜索', 'luomor-novel' ); ?>","buttonPosition":"button-inside","width":75,"widthUnit":"%"} /-->
+<!-- wp:search {"label":"","placeholder":"搜索小说...","buttonText":"搜索","buttonPosition":"button-inside","width":75,"widthUnit":"%"} /-->
 
 <!-- wp:heading {"level":2,"fontSize":"large"} -->
-<h2 class="wp-block-heading"><?php esc_html_e( '小说', 'luomor-novel' ); ?></h2>
+<h2 class="wp-block-heading">小说</h2>
 <!-- /wp:heading -->
 
 <!-- wp:query {"query":{"perPage":6,"pages":0,"offset":0,"postType":"novel","order":"desc","orderBy":"date","inherit":false}} -->
@@ -30,14 +30,14 @@
 
 <!-- wp:query-no-results -->
 <!-- wp:paragraph -->
-<p><?php esc_html_e( '未找到相关小说', 'luomor-novel' ); ?></p>
+<p>未找到相关小说</p>
 <!-- /wp:paragraph -->
 <!-- /wp:query-no-results -->
 </div>
 <!-- /wp:query -->
 
 <!-- wp:heading {"level":2,"fontSize":"large"} -->
-<h2 class="wp-block-heading"><?php esc_html_e( '章节', 'luomor-novel' ); ?></h2>
+<h2 class="wp-block-heading">章节</h2>
 <!-- /wp:heading -->
 
 <!-- wp:query {"query":{"perPage":10,"pages":0,"offset":0,"postType":"chapter","order":"desc","orderBy":"date","inherit":false}} -->
@@ -48,7 +48,7 @@
 <div class="wp-block-group luomor-chapter-result">
 <!-- wp:post-title {"level":3,"isLink":true,"fontSize":"medium"} /-->
 <!-- wp:paragraph {"fontSize":"small"} -->
-<p><?php esc_html_e( '出自：', 'luomor-novel' ); ?> <!-- wp:post-terms {"term":"category","isLink":true} /--></p>
+<p>出自：相关小说</p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->

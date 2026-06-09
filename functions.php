@@ -22,6 +22,7 @@ define( 'LUOMOR_NOVEL_VERSION', '1.0.0' );
 $luomor_includes = array(
 	'includes/core.php',            // CPT 和分类法注册
 	'includes/meta.php',            // 自定义字段注册
+	'includes/blocks.php',          // 自定义区块注册
 	'includes/settings.php',        // 主题设置页
 	'includes/template-functions.php', // 模板辅助函数
 	'includes/bookmarks.php',       // 收藏功能

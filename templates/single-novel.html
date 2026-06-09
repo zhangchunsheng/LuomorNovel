@@ -1,6 +1,4 @@
-<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
-
-<!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"var:preset|spacing|xl","bottom":"var:preset|spacing|xl"}}},"layout":{"type":"constrained"}} -->
+<!-- wp:group {"style":{"spacing":{"margin":{"top":"var:preset|spacing|xl","bottom":"var:preset|spacing|xl"}}},"layout":{"type":"constrained"}} -->
 <main class="wp-block-group" style="margin-top:var(--wp--preset--spacing--xl);margin-bottom:var(--wp--preset--spacing--xl)">
 
 <!-- wp:columns {"align":"wide"} -->
@@ -12,7 +10,7 @@
 </div>
 <!-- /wp:column -->
 
-<!-- wp:column {"width":""} -->
+<!-- wp:column -->
 <div class="wp-block-column">
 
 <!-- wp:post-title {"level":1,"fontSize":"huge"} /-->
@@ -25,12 +23,8 @@
 </div>
 <!-- /wp:group -->
 
-<!-- wp:paragraph {"className":"luomor-novel-meta"} -->
-<p class="luomor-novel-meta">
-<!-- wp:paragraph -->
-<p><?php esc_html_e( '作者：', 'luomor-novel' ); ?><span class="author-name"><!-- wp:post-author-name {"isLink":true} /--></span></p>
-<!-- /wp:paragraph -->
-</p>
+<!-- wp:paragraph {"className":"luomor-novel-meta","fontSize":"small"} -->
+<p class="luomor-novel-meta">作者：<span class="author-name"><!-- wp:post-author-name {"isLink":true} /--></span></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:post-content {"fontSize":"normal"} /-->
@@ -39,11 +33,7 @@
 <div class="wp-block-buttons">
 <!-- wp:button {"className":"luomor-bookmark-btn"} -->
 <div class="wp-block-button luomor-bookmark-btn">
-<button class="wp-block-button__link wp-element-button" data-action="bookmark">
-<span class="bookmark-icon">&#9825;</span>
-<span class="bookmark-text"><?php esc_html_e( '收藏', 'luomor-novel' ); ?></span>
-<span class="bookmark-count"></span>
-</button>
+<button class="wp-block-button__link wp-element-button" data-action="bookmark"><span class="bookmark-icon">&#9825;</span><span class="bookmark-text">收藏</span><span class="bookmark-count"></span></button>
 </div>
 <!-- /wp:button -->
 </div>
@@ -58,7 +48,7 @@
 <!-- wp:separator {"className":"is-style-wide"} /-->
 
 <!-- wp:heading {"level":2} -->
-<h2 class="wp-block-heading"><?php esc_html_e( '章节目录', 'luomor-novel' ); ?></h2>
+<h2 class="wp-block-heading">章节目录</h2>
 <!-- /wp:heading -->
 
 <!-- wp:luomor/novel-toc /-->
@@ -66,7 +56,7 @@
 <!-- wp:separator {"className":"is-style-wide"} /-->
 
 <!-- wp:heading {"level":2} -->
-<h2 class="wp-block-heading"><?php esc_html_e( '作品简介', 'luomor-novel' ); ?></h2>
+<h2 class="wp-block-heading">作品简介</h2>
 <!-- /wp:heading -->
 
 <!-- wp:post-content /-->

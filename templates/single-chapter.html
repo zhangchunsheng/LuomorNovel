@@ -1,6 +1,4 @@
-<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
-
-<!-- wp:group {"tagName":"main","className":"luomor-chapter-reader","style":{"spacing":{"margin":{"top":"var:preset|spacing|lg","bottom":"var:preset|spacing|xl"}}},"layout":{"type":"constrained"}} -->
+<!-- wp:group {"className":"luomor-chapter-reader","style":{"spacing":{"margin":{"top":"var:preset|spacing|lg","bottom":"var:preset|spacing|xl"}}},"layout":{"type":"constrained"}} -->
 <main class="wp-block-group luomor-chapter-reader" style="margin-top:var(--wp--preset--spacing--lg);margin-bottom:var(--wp--preset--spacing--xl)">
 
 <!-- wp:group {"className":"luomor-chapter-header","layout":{"type":"flex","justifyContent":"space-between","flexWrap":"wrap"}} -->
@@ -11,9 +9,7 @@
 
 <!-- wp:paragraph {"className":"luomor-chapter-novel-link"} -->
 <p class="luomor-chapter-novel-link">
-<a href="#" class="luomor-novel-back-link">
-&larr; <?php esc_html_e( '返回小说', 'luomor-novel' ); ?>
-</a>
+<a href="#" class="luomor-novel-back-link">&larr; 返回小说</a>
 </p>
 <!-- /wp:paragraph -->
 
@@ -29,17 +25,13 @@
 <div class="wp-block-buttons">
 <!-- wp:button {"className":"is-style-outline","fontSize":"small"} -->
 <div class="wp-block-button is-style-outline luomor-font-size-btn">
-<button class="wp-block-button__link wp-element-button" aria-label="<?php esc_attr_e( '调整字号', 'luomor-novel' ); ?>">
-A+
-</button>
+<button class="wp-block-button__link wp-element-button" aria-label="调整字号">A+</button>
 </div>
 <!-- /wp:button -->
 
 <!-- wp:button {"className":"is-style-outline","fontSize":"small"} -->
 <div class="wp-block-button is-style-outline luomor-dark-mode-btn">
-<button class="wp-block-button__link wp-element-button" aria-label="<?php esc_attr_e( '切换暗色模式', 'luomor-novel' ); ?>">
-&#9790;
-</button>
+<button class="wp-block-button__link wp-element-button" aria-label="切换暗色模式">&#9790;</button>
 </div>
 <!-- /wp:button -->
 </div>
@@ -53,18 +45,18 @@ A+
 
 <!-- wp:separator {"className":"is-style-wide"} /-->
 
-<!-- wp:progress-bar /-->
+<!-- wp:luomor/progress-bar /-->
 
 <!-- wp:post-content {"className":"luomor-chapter-content","fontSize":"large"} /-->
 
 <!-- wp:separator {"className":"is-style-wide"} /-->
 
-<!-- wp:template-part {"slug":"chapter-nav"} /-->
+<!-- wp:luomor/chapter-nav /-->
 
 <!-- wp:spacer {"height":"2rem"} /-->
 
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading"><?php esc_html_e( '评论', 'luomor-novel' ); ?></h3>
+<h3 class="wp-block-heading">评论</h3>
 <!-- /wp:heading -->
 
 <!-- wp:post-comments /-->

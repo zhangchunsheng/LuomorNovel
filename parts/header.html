@@ -11,21 +11,13 @@
 </div>
 <!-- /wp:group -->
 
-<!-- wp:navigation {"ref":"","overlayMenu":"never","layout":{"type":"flex","justifyContent":"right","orientation":"horizontal"},"fontSize":"normal"} /-->
+<!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","justifyContent":"right","orientation":"horizontal"},"fontSize":"normal"} /-->
 
-<!-- wp:search {"label":"","placeholder":"<?php esc_attr_e( '搜索...', 'luomor-novel' ); ?>","buttonText":"<?php esc_attr_e( '搜索', 'luomor-novel' ); ?>","buttonPosition":"no-button","width":30,"widthUnit":"%","className":"luomor-header-search"} /-->
+<!-- wp:search {"label":"","placeholder":"搜索...","buttonText":"搜索","buttonPosition":"no-button","width":30,"widthUnit":"%","className":"luomor-header-search"} /-->
 
 <!-- wp:group {"className":"luomor-header-auth","layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group luomor-header-auth">
-<?php if ( is_user_logged_in() ) : ?>
-<!-- wp:paragraph {"fontSize":"small"} -->
-<p><?php echo esc_html( wp_get_current_user()->display_name ); ?></p>
-<!-- /wp:paragraph -->
-<?php else : ?>
-<!-- wp:paragraph {"fontSize":"small"} -->
-<p><a href="<?php echo esc_url( wp_login_url() ); ?>"><?php esc_html_e( '登录', 'luomor-novel' ); ?></a></p>
-<!-- /wp:paragraph -->
-<?php endif; ?>
+<!-- wp:loginout /-->
 </div>
 <!-- /wp:group -->
 
