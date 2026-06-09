@@ -62,7 +62,7 @@ class Luomor_AI_OpenAI implements Luomor_AI_Provider_Interface {
 			$messages = array_merge( $args['messages'], $messages );
 		}
 
-		$response = wp_remote_post( $base_url , array(
+		$data = array(
 			'timeout' => 30,
 			'headers' => array(
 				'Content-Type'  => 'application/json',
@@ -74,7 +74,10 @@ class Luomor_AI_OpenAI implements Luomor_AI_Provider_Interface {
 				'max_tokens'  => $max_tokens,
 				'temperature' => $temperature,
 			) ),
-		) );
+		);
+		print_r($base_url);
+		print_r($data);
+		$response = wp_remote_post( $base_url , $data );
 
 		if ( is_wp_error( $response ) ) {
 			return array(
