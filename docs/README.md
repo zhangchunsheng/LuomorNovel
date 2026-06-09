@@ -21,4 +21,7 @@ claude
 - 支持小说的搜索
 - 支持小说的分类
 - 支持小说的标签
+
+sudo apt install bubblewrap
+npm install -g @openai/codex
 ```
