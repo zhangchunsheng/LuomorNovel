@@ -164,7 +164,7 @@
 			provider: provider.value
 		};
 
-		fetch( luomorAiWriter.apiRoot + 'ai/generate', {
+		fetch( luomorAiWriter.apiRoot.replace( /\/+$/, '' ) + '/ai/generate', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

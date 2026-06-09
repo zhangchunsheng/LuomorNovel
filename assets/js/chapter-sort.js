@@ -85,7 +85,9 @@
 			return;
 		}
 
-		fetch( luomorChapterSort.apiRoot + 'novels/' + novelId + '/chapters?per_page=500', {
+		var base = luomorChapterSort.apiRoot.replace( /\/+$/, '' ) + '/';
+
+		fetch( base + 'novels/' + novelId + '/chapters?per_page=500', {
 			headers: {
 				'X-WP-Nonce': luomorChapterSort.nonce
 			}
@@ -235,7 +237,7 @@
 			msg.style.color = '#666';
 		}
 
-		fetch( luomorChapterSort.apiRoot + 'novels/' + novelId + '/chapters/reorder', {
+		fetch( base + 'novels/' + novelId + '/chapters/reorder', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

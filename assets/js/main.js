@@ -15,10 +15,17 @@
 	 */
 	window.luomorNovel.api = {
 		/**
+		 * 基础 URL（确保尾部有斜杠）
+		 */
+		_base: function() {
+			return luomorNovel.apiRoot.replace( /\/+$/, '' ) + '/';
+		},
+
+		/**
 		 * GET 请求
 		 */
 		get: function( path, params ) {
-			var url = luomorNovel.apiRoot + path;
+			var url = this._base() + path;
 			if ( params ) {
 				url += '?' + Object.keys( params )
 					.map( function( key ) {
@@ -42,7 +49,7 @@
 		 * POST 请求
 		 */
 		post: function( path, data ) {
-			return fetch( luomorNovel.apiRoot + path, {
+			return fetch( this._base() + path, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
@@ -63,7 +70,7 @@
 		 * DELETE 请求
 		 */
 		del: function( path ) {
-			return fetch( luomorNovel.apiRoot + path, {
+			return fetch( this._base() + path, {
 				method: 'DELETE',
 				headers: {
 					'X-WP-Nonce': luomorNovel.nonce
@@ -80,7 +87,7 @@
 		 * PUT 请求
 		 */
 		put: function( path, data ) {
-			return fetch( luomorNovel.apiRoot + path, {
+			return fetch( this._base() + path, {
 				method: 'PUT',
 				headers: {
 					'Content-Type': 'application/json',
