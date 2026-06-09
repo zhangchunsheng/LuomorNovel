@@ -39,6 +39,7 @@ class Luomor_AI_OpenAI implements Luomor_AI_Provider_Interface {
 	public function generate( array $args ): array {
 		$api_key = get_option( 'luomor_ai_openai_key', '' );
 		$model   = get_option( 'luomor_ai_openai_model', 'gpt-4o' );
+		$base_url = rtrim( get_option( 'luomor_ai_openai_base_url', 'https://api.openai.com/v1' ), '/' );
 		$max_tokens = (int) get_option( 'luomor_ai_max_tokens', 4000 );
 		$temperature = (float) get_option( 'luomor_ai_temperature', 0.7 );
 
@@ -61,7 +62,7 @@ class Luomor_AI_OpenAI implements Luomor_AI_Provider_Interface {
 			$messages = array_merge( $args['messages'], $messages );
 		}
 
-		$response = wp_remote_post( 'https://api.openai.com/v1/chat/completions', array(
+		$response = wp_remote_post( $base_url . '/chat/completions', array(
 			'timeout' => 30,
 			'headers' => array(
 				'Content-Type'  => 'application/json',
@@ -125,6 +126,7 @@ class Luomor_AI_Claude implements Luomor_AI_Provider_Interface {
 	public function generate( array $args ): array {
 		$api_key = get_option( 'luomor_ai_claude_key', '' );
 		$model   = get_option( 'luomor_ai_claude_model', 'claude-sonnet-4-20250514' );
+		$base_url = rtrim( get_option( 'luomor_ai_claude_base_url', 'https://api.anthropic.com/v1' ), '/' );
 		$max_tokens = (int) get_option( 'luomor_ai_max_tokens', 4000 );
 		$temperature = (float) get_option( 'luomor_ai_temperature', 0.7 );
 
@@ -158,7 +160,7 @@ class Luomor_AI_Claude implements Luomor_AI_Provider_Interface {
 			$body['system'] = $args['system_prompt'];
 		}
 
-		$response = wp_remote_post( 'https://api.anthropic.com/v1/messages', array(
+		$response = wp_remote_post( $base_url . '/messages', array(
 			'timeout' => 30,
 			'headers' => array(
 				'Content-Type'      => 'application/json',
@@ -226,6 +228,7 @@ class Luomor_AI_Gemini implements Luomor_AI_Provider_Interface {
 	public function generate( array $args ): array {
 		$api_key = get_option( 'luomor_ai_gemini_key', '' );
 		$model   = get_option( 'luomor_ai_gemini_model', 'gemini-2.5-pro' );
+		$base_url = rtrim( get_option( 'luomor_ai_gemini_base_url', 'https://generativelanguage.googleapis.com/v1beta' ), '/' );
 		$temperature = (float) get_option( 'luomor_ai_temperature', 0.7 );
 
 		// 构建内容
@@ -260,7 +263,8 @@ class Luomor_AI_Gemini implements Luomor_AI_Provider_Interface {
 		);
 
 		$url = sprintf(
-			'https://generativelanguage.googleapis.com/v1beta/models/%s:generateContent?key=%s',
+			'%s/models/%s:generateContent?key=%s',
+			$base_url,
 			$model,
 			$api_key
 		);

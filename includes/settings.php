@@ -31,10 +31,13 @@ function luomor_novel_register_settings() {
 	// AI 设置
 	register_setting( 'luomor_ai_settings', 'luomor_ai_openai_key' );
 	register_setting( 'luomor_ai_settings', 'luomor_ai_openai_model' );
+	register_setting( 'luomor_ai_settings', 'luomor_ai_openai_base_url' );
 	register_setting( 'luomor_ai_settings', 'luomor_ai_claude_key' );
 	register_setting( 'luomor_ai_settings', 'luomor_ai_claude_model' );
+	register_setting( 'luomor_ai_settings', 'luomor_ai_claude_base_url' );
 	register_setting( 'luomor_ai_settings', 'luomor_ai_gemini_key' );
 	register_setting( 'luomor_ai_settings', 'luomor_ai_gemini_model' );
+	register_setting( 'luomor_ai_settings', 'luomor_ai_gemini_base_url' );
 	register_setting( 'luomor_ai_settings', 'luomor_ai_default_provider' );
 	register_setting( 'luomor_ai_settings', 'luomor_ai_max_tokens' );
 	register_setting( 'luomor_ai_settings', 'luomor_ai_temperature' );
@@ -83,6 +86,17 @@ function luomor_novel_settings_page_render() {
 						<p class="description"><?php esc_html_e( '默认：gpt-4o', 'luomor-novel' ); ?></p>
 					</td>
 				</tr>
+				<tr>
+					<th scope="row">
+						<label for="luomor_ai_openai_base_url"><?php esc_html_e( 'OpenAI Base URL', 'luomor-novel' ); ?></label>
+					</th>
+					<td>
+						<input type="url" id="luomor_ai_openai_base_url" name="luomor_ai_openai_base_url"
+							value="<?php echo esc_attr( get_option( 'luomor_ai_openai_base_url', 'https://api.openai.com/v1' ) ); ?>"
+							class="regular-text" placeholder="https://api.openai.com/v1" />
+						<p class="description"><?php esc_html_e( '留空使用官方地址。兼容 OpenAI 格式的第三方 API（如 SiliconFlow、DeepSeek 等）', 'luomor-novel' ); ?></p>
+					</td>
+				</tr>
 
 				<!-- Claude -->
 				<tr>
@@ -107,6 +121,17 @@ function luomor_novel_settings_page_render() {
 						<p class="description"><?php esc_html_e( '默认：claude-sonnet-4-20250514', 'luomor-novel' ); ?></p>
 					</td>
 				</tr>
+				<tr>
+					<th scope="row">
+						<label for="luomor_ai_claude_base_url"><?php esc_html_e( 'Claude Base URL', 'luomor-novel' ); ?></label>
+					</th>
+					<td>
+						<input type="url" id="luomor_ai_claude_base_url" name="luomor_ai_claude_base_url"
+							value="<?php echo esc_attr( get_option( 'luomor_ai_claude_base_url', 'https://api.anthropic.com/v1' ) ); ?>"
+							class="regular-text" placeholder="https://api.anthropic.com/v1" />
+						<p class="description"><?php esc_html_e( '留空使用官方地址。兼容 Anthropic 格式的第三方 API', 'luomor-novel' ); ?></p>
+					</td>
+				</tr>
 
 				<!-- Gemini -->
 				<tr>
@@ -129,6 +154,17 @@ function luomor_novel_settings_page_render() {
 							value="<?php echo esc_attr( get_option( 'luomor_ai_gemini_model', 'gemini-2.5-pro' ) ); ?>"
 							class="regular-text" />
 						<p class="description"><?php esc_html_e( '默认：gemini-2.5-pro', 'luomor-novel' ); ?></p>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">
+						<label for="luomor_ai_gemini_base_url"><?php esc_html_e( 'Gemini Base URL', 'luomor-novel' ); ?></label>
+					</th>
+					<td>
+						<input type="url" id="luomor_ai_gemini_base_url" name="luomor_ai_gemini_base_url"
+							value="<?php echo esc_attr( get_option( 'luomor_ai_gemini_base_url', 'https://generativelanguage.googleapis.com/v1beta' ) ); ?>"
+							class="regular-text" placeholder="https://generativelanguage.googleapis.com/v1beta" />
+						<p class="description"><?php esc_html_e( '留空使用官方地址。兼容 Google AI 格式的第三方 API', 'luomor-novel' ); ?></p>
 					</td>
 				</tr>
 

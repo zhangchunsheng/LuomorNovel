@@ -26,4 +26,5 @@ sudo apt install bubblewrap
 npm install -g @openai/codex
 
 页面显示错误：display_name ); ?>，未替换内容
+openai, gemini, claude 增加base_url配置，以方便使用兼容性API
 ```
