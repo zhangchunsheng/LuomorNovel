@@ -62,23 +62,7 @@ class Luomor_AI_OpenAI implements Luomor_AI_Provider_Interface {
 			$messages = array_merge( $args['messages'], $messages );
 		}
 
-		$data = array(
-			'timeout' => 30,
-			'headers' => array(
-				'Content-Type'  => 'application/json',
-				'Authorization' => 'Bearer ' . $api_key,
-			),
-			'body' => wp_json_encode( array(
-				'model'       => $model,
-				'messages'    => $messages,
-				'max_tokens'  => $max_tokens,
-				'temperature' => $temperature,
-			) ),
-		);
-		print_r($base_url . "/chat/completions");
-		print_r($data);
 		$response = wp_remote_post( $base_url . "/chat/completions", $data );
-		print_r($response);
 
 		if ( is_wp_error( $response ) ) {
 			return array(
