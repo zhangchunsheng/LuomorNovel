@@ -104,25 +104,6 @@ function luomor_novel_get_adjacent_chapter( $current_chapter_id, $direction = 'n
 }
 
 /**
- * 获取阅读进度（用户上次阅读的章节）
- *
- * @param int $novel_id 小说 ID
- * @param int $user_id  用户 ID（默认当前用户）
- * @return int|false 章节 ID 或 false
- */
-function luomor_novel_get_reading_progress( $novel_id, $user_id = 0 ) {
-	if ( ! $user_id ) {
-		$user_id = get_current_user_id();
-	}
-	if ( ! $user_id ) {
-		return false;
-	}
-
-	$chapter_id = get_user_meta( $user_id, '_luomor_last_read_' . (int) $novel_id, true );
-	return $chapter_id ? (int) $chapter_id : false;
-}
-
-/**
  * 获取小说章节总数
  *
  * @param int $novel_id 小说 ID
