@@ -75,9 +75,10 @@ class Luomor_AI_OpenAI implements Luomor_AI_Provider_Interface {
 				'temperature' => $temperature,
 			) ),
 		);
-		print_r($base_url);
+		print_r($base_url . "/chat/completions");
 		print_r($data);
-		$response = wp_remote_post( $base_url , $data );
+		$response = wp_remote_post( $base_url . "/chat/completions", $data );
+		print_r($response);
 
 		if ( is_wp_error( $response ) ) {
 			return array(
@@ -163,7 +164,7 @@ class Luomor_AI_Claude implements Luomor_AI_Provider_Interface {
 			$body['system'] = $args['system_prompt'];
 		}
 
-		$response = wp_remote_post( $base_url , array(
+		$response = wp_remote_post( $base_url . "/messages", array(
 			'timeout' => 30,
 			'headers' => array(
 				'Content-Type'      => 'application/json',
