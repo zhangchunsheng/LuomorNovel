@@ -1037,3 +1037,5 @@ Codex could not find bubblewrap on PATH. Install bubblewrap with your OS package
   bubblewrap in the meantime.
 
 "PHP message: PHP Fatal error:  Cannot redeclare luomor_novel_get_reading_progress() (previously declared in /mnt/luomor/git/luomor-web/wordpress/wp-content/themes/LuomorNovel/includes/template-functions.php:113)
+
+cURL error 28: Operation timed out after 30001 milliseconds with 0 out of -1 bytes received

@@ -63,7 +63,7 @@ class Luomor_AI_OpenAI implements Luomor_AI_Provider_Interface {
 		}
 
 		$data = array(
-			'timeout' => 30,
+			'timeout' => 300,
 			'headers' => array(
 				'Content-Type'  => 'application/json',
 				'Authorization' => 'Bearer ' . $api_key,
@@ -162,7 +162,7 @@ class Luomor_AI_Claude implements Luomor_AI_Provider_Interface {
 		}
 
 		$response = wp_remote_post( $base_url . "/v1/messages", array(
-			'timeout' => 30,
+			'timeout' => 300,
 			'headers' => array(
 				'Content-Type'      => 'application/json',
 				'x-api-key'         => $api_key,
@@ -271,7 +271,7 @@ class Luomor_AI_Gemini implements Luomor_AI_Provider_Interface {
 		);
 
 		$response = wp_remote_post( $url, array(
-			'timeout' => 30,
+			'timeout' => 300,
 			'headers' => array(
 				'Content-Type' => 'application/json',
 			),
